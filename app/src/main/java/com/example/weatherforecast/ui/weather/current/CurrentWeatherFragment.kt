@@ -8,6 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.example.weatherforecast.R
+import com.example.weatherforecast.ui.data.ApixuWeatherApiCall
+import kotlinx.android.synthetic.main.fragment_current_weather.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import okhttp3.Dispatcher
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,5 +34,12 @@ class CurrentWeatherFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_current_weather, container, false)
     }
 
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+//        val apixuWeatherApiCall = ApixuWeatherApiCall.invoke()
+//        GlobalScope.launch(Dispatchers.Main) {
+//            val weather = apixuWeatherApiCall.getWeather("Cracow").await()
+//            textView.text = weather.currentWeather.toString()
+//        }
+    }
 }

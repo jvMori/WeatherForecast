@@ -25,9 +25,9 @@ data class CurrentWeather(
     @SerializedName("pressure_mb")
     val pressureMb: Int,
     @SerializedName("temp_c")
-    val tempC: Int,
+    val tempC: Double,
     @SerializedName("temp_f")
-    val tempF: Int,
+    val tempF: Double,
     val uv: Int,
     @SerializedName("vis_km")
     val visKm: Int,
