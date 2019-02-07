@@ -1,14 +1,14 @@
-package com.example.weatherforecast.ui.data
+package com.example.weatherforecast.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.weatherforecast.ui.data.db.entity.CURRENT_ID
-import com.example.weatherforecast.ui.data.db.entity.CurrentWeather
-import com.example.weatherforecast.ui.data.db.unitlocalized.ImperialCurrentWeather
-import com.example.weatherforecast.ui.data.db.unitlocalized.MetricCurrentWeather
+import com.example.weatherforecast.data.db.entity.CURRENT_ID
+import com.example.weatherforecast.data.db.entity.CurrentWeather
+import com.example.weatherforecast.data.db.unitlocalized.ImperialCurrentWeather
+import com.example.weatherforecast.data.db.unitlocalized.MetricCurrentWeather
 
 @Dao
 interface CurrentWeatherDao

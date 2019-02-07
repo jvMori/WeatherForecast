@@ -1,8 +1,8 @@
-package com.example.weatherforecast.ui.data.network
+package com.example.weatherforecast.data.network
 
 import android.content.Context
 import android.net.ConnectivityManager
-import com.example.weatherforecast.ui.internal.NoConectivityException
+import com.example.weatherforecast.internal.NoConectivityException
 import okhttp3.Interceptor
 import okhttp3.Response
 import java.io.IOException

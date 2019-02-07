@@ -1,10 +1,10 @@
-package com.example.weatherforecast.ui.data.network
+package com.example.weatherforecast.data.network
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.weatherforecast.ui.data.network.response.CurrentWeatherResponse
-import com.example.weatherforecast.ui.internal.NoConectivityException
+import com.example.weatherforecast.data.network.response.CurrentWeatherResponse
+import com.example.weatherforecast.internal.NoConectivityException
 
 class WeatherNetworkDataSourceImpl (
     private val apixuWeatherApiCall: ApixuWeatherApiCall

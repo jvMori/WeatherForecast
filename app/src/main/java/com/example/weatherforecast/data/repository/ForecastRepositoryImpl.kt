@@ -1,10 +1,10 @@
-package com.example.weatherforecast.ui.data.repository
+package com.example.weatherforecast.data.repository
 
 import androidx.lifecycle.LiveData
-import com.example.weatherforecast.ui.data.CurrentWeatherDao
-import com.example.weatherforecast.ui.data.db.unitlocalized.UnitSpecificCurrentWeather
-import com.example.weatherforecast.ui.data.network.WeatherNetworkDataSource
-import com.example.weatherforecast.ui.data.network.response.CurrentWeatherResponse
+import com.example.weatherforecast.data.CurrentWeatherDao
+import com.example.weatherforecast.data.db.unitlocalized.UnitSpecificCurrentWeather
+import com.example.weatherforecast.data.network.WeatherNetworkDataSource
+import com.example.weatherforecast.data.network.response.CurrentWeatherResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

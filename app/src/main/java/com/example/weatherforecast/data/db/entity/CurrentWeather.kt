@@ -1,4 +1,4 @@
-package com.example.weatherforecast.ui.data.db.entity
+package com.example.weatherforecast.data.db.entity
 
 import androidx.room.Embedded
 import androidx.room.Entity

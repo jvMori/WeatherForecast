@@ -1,30 +1,29 @@
-package com.example.weatherforecast.ui.data.db.unitlocalized
+package com.example.weatherforecast.data.db.unitlocalized
 
 import androidx.room.ColumnInfo
 
-data class ImperialCurrentWeather
-(
+data class MetricCurrentWeather (
     override val cloud: Int,
     @ColumnInfo(name = "condition_icon")
     override val conditionIcon: String,
     @ColumnInfo(name = "condition_text")
     override val conditionText: String,
-    @ColumnInfo(name = "feelslikeF")
+    @ColumnInfo(name = "feelslikeC")
     override val feelsLike: Double,
     override val humidity: Int,
     override val isDay: Int,
-    @ColumnInfo(name="precipIn")
+    @ColumnInfo(name="precipMm")
     override val preciption: Double,
-    @ColumnInfo(name="pressureIn")
+    @ColumnInfo(name="pressureMb")
     override val pressure: Double,
-    @ColumnInfo(name="tempF")
+    @ColumnInfo(name="tempC")
     override val temperature: Double,
     override val uv: Int,
-    @ColumnInfo(name="visMiles")
+    @ColumnInfo(name="visKm")
     override val visibility: Double,
     override val windDegree: Double,
     @ColumnInfo(name="windDir")
     override val windDirection: Double,
-    @ColumnInfo(name="windMph")
+    @ColumnInfo(name="windKph")
     override val windSpeed: Double
 ) : UnitSpecificCurrentWeather

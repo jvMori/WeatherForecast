@@ -9,10 +9,10 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 
 import com.example.weatherforecast.R
-import com.example.weatherforecast.ui.data.network.ApixuWeatherApiCall
-import com.example.weatherforecast.ui.data.network.ConnectivityInterceptorImpl
-import com.example.weatherforecast.ui.data.network.WeatherNetworkDataSource
-import com.example.weatherforecast.ui.data.network.WeatherNetworkDataSourceImpl
+import com.example.weatherforecast.data.network.ApixuWeatherApiCall
+import com.example.weatherforecast.data.network.ConnectivityInterceptorImpl
+import com.example.weatherforecast.data.network.WeatherNetworkDataSource
+import com.example.weatherforecast.data.network.WeatherNetworkDataSourceImpl
 import kotlinx.android.synthetic.main.fragment_current_weather.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -39,8 +39,13 @@ class CurrentWeatherFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val apixuWeatherApiCall = ApixuWeatherApiCall.invoke(ConnectivityInterceptorImpl(this.context!!))
-        val weatherNetworkDataSource = WeatherNetworkDataSourceImpl(apixuWeatherApiCall)
+        val apixuWeatherApiCall = ApixuWeatherApiCall.invoke(
+            ConnectivityInterceptorImpl(
+                this.context!!
+            )
+        )
+        val weatherNetworkDataSource =
+            WeatherNetworkDataSourceImpl(apixuWeatherApiCall)
         weatherNetworkDataSource.downloadedCurrentWeather.observe(this, Observer {
             textView.text = it.toString()
         })

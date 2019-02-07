@@ -1,4 +1,4 @@
-package com.example.weatherforecast.ui.data.db.unitlocalized
+package com.example.weatherforecast.data.db.unitlocalized
 
 interface UnitSpecificCurrentWeather
 {
