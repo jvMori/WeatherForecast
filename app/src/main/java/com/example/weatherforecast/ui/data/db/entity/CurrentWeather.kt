@@ -1,9 +1,15 @@
-package com.example.weatherforecast.ui.data.response
+package com.example.weatherforecast.ui.data.db.entity
 
+import androidx.room.Embedded
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+const val CURRENT_ID = 0
+@Entity(tableName="current_weather")
 data class CurrentWeather(
     val cloud: Int,
+    @Embedded(prefix = "condition_")
     val condition: Condition,
     @SerializedName("feelslike_c")
     val feelslikeC: Double,
@@ -12,10 +18,6 @@ data class CurrentWeather(
     val humidity: Int,
     @SerializedName("is_day")
     val isDay: Int,
-    @SerializedName("last_updated")
-    val lastUpdated: String,
-    @SerializedName("last_updated_epoch")
-    val lastUpdatedEpoch: Int,
     @SerializedName("precip_in")
     val precipIn: Double,
     @SerializedName("precip_mm")
@@ -41,4 +43,7 @@ data class CurrentWeather(
     val windKph: Double,
     @SerializedName("wind_mph")
     val windMph: Double
-)
+){
+    @PrimaryKey(autoGenerate = false)
+    var id:Int = CURRENT_ID
+}

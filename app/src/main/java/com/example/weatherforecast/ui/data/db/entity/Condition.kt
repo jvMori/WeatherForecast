@@ -1,4 +1,4 @@
-package com.example.weatherforecast.ui.data.response
+package com.example.weatherforecast.ui.data.db.entity
 
 data class Condition(
     val code: Int,
