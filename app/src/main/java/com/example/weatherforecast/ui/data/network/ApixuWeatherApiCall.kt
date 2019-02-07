@@ -1,6 +1,5 @@
-package com.example.weatherforecast.ui.data
+package com.example.weatherforecast.ui.data.network
 
-import com.example.weatherforecast.ui.data.network.ConnectivityInterceptor
 import com.example.weatherforecast.ui.data.network.response.CurrentWeatherResponse
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import kotlinx.coroutines.Deferred
