@@ -22,6 +22,7 @@ data class MetricCurrentWeather (
     @ColumnInfo(name="visKm")
     override val visibility: Double,
     override val windDegree: Double,
+    @ColumnInfo(name="windDir")
     override val windDirection: Double,
     @ColumnInfo(name="windKph")
     override val windSpeed: Double

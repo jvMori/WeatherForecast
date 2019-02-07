@@ -23,6 +23,7 @@ data class ImperialCurrentWeather
     @ColumnInfo(name="visMiles")
     override val visibility: Double,
     override val windDegree: Double,
+    @ColumnInfo(name="windDir")
     override val windDirection: Double,
     @ColumnInfo(name="windMph")
     override val windSpeed: Double

@@ -8,7 +8,8 @@ import com.example.weatherforecast.ui.data.db.entity.CurrentWeather
 
 @Database(
     entities = [CurrentWeather::class],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 abstract class ForecastDatabase : RoomDatabase() {
     abstract fun currentWeatherDao() : CurrentWeatherDao
@@ -23,6 +24,6 @@ abstract class ForecastDatabase : RoomDatabase() {
 
         private fun buildDatabase(context: Context) =
             Room.databaseBuilder(context.applicationContext, ForecastDatabase::class.java, "forecastDb").build()
-        
+
     }
 }
