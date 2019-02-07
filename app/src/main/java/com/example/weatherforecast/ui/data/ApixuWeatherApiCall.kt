@@ -1,5 +1,6 @@
 package com.example.weatherforecast.ui.data
 
+import com.example.weatherforecast.ui.data.network.ConnectivityInterceptor
 import com.example.weatherforecast.ui.data.network.response.CurrentWeatherResponse
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import kotlinx.coroutines.Deferred
@@ -24,7 +25,9 @@ interface ApixuWeatherApiCall
     ) : Deferred<CurrentWeatherResponse>
 
     companion object {
-        operator fun invoke() : ApixuWeatherApiCall {
+        operator fun invoke(
+            connectivityInterceptor: ConnectivityInterceptor
+        ) : ApixuWeatherApiCall {
             val requestInterceptor = Interceptor { chain ->
                 val url = chain.request()
                     .url()
@@ -39,6 +42,7 @@ interface ApixuWeatherApiCall
             }
             val okHttpClient = OkHttpClient.Builder()
                 .addInterceptor(requestInterceptor)
+                .addInterceptor(connectivityInterceptor)
                 .build()
             return Retrofit.Builder()
                 .client(okHttpClient)
